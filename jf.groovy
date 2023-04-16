@@ -3,19 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make build'
+                sh 'chmod +x hello.sh'
             }
         }
         stage('Test') {
             steps {
-                sh 'make test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'make deploy'
+                sh './hello.sh'
             }
         }
     }
 }
-
